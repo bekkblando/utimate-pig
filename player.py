@@ -23,10 +23,33 @@ class Player:
         return random.randint(1, 6)
 
 
-class Strategy_player(Player):
+class Strategy_Player(Player):
+    def __init__(self, turnscore = 10):
+        self.turnscore = turnscore
+        self.player_points = 0
 
     def roll_turn(self):
-        pass
+        turn = 0
+        while turn < self.turnscore:
+            value = self.roll()
+            if value == 1:
+                return 0
+            else:
+                turn += value
+        return turn
+
+
+class Random_Player(Player):
+    def roll_turn(self):
+        rolls = random.randint(1, 10)
+        turn = 0
+        for number in range(rolls):
+            value = self.roll()
+            if value == 1:
+                return 0
+            else:
+                turn += value
+        return turn
 
 
 class Game:

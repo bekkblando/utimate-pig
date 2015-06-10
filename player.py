@@ -40,8 +40,11 @@ class Strategy_Player(Player):
 
 
 class Random_Player(Player):
+    def __init__(self):
+        self.player_points = 0
+
     def roll_turn(self):
-        rolls = random.randint(1, 10)
+        rolls = random.randint(1, 4)
         turn = 0
         for number in range(rolls):
             value = self.roll()

@@ -1,3 +1,5 @@
+This was an assignment to use data analysis with a Monte Carolo Simuation to find the best strategy for PIG.
+
 # Ultimate Pig
 
 ## Description
